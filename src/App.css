@@ -8,15 +8,13 @@
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  background-image: url(./images/food-around.jpg);
+  background-image: url(./images/food-around-small.jpg);
 }
 
 .home {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute; /* or absolute */
+  top: 35%;
+  left: 35%;
 }
 
 .App-logo {

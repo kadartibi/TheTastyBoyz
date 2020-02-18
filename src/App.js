@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Fragment } from "react";
+import React from "react";
 import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import Categories from "./components/Categories";
@@ -27,33 +27,26 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route
-          path="/"
-          render={({ location }) => (
-            <Fragment>
-              <Paper className={classes.root}>
-                <Tabs
-                  value={value}
-                  onChange={handleChange}
-                  indicatorColor="primary"
-                  textColor="primary"
-                  centered
-                >
-                  <Tab label="Home" component={Link} to="/" />
-                  <Tab label="Categories" component={Link} to="/categories" />
-                  <Tab label="Pantry" component={Link} to="/pantry" />
-                  <Tab label="Search" component={Link} to="/search" />
-                </Tabs>
-              </Paper>
-              <Switch>
-                <Route path="/" component={Home} />
-                <Route path="/categories" component={Categories} />
-                <Route path="/pantry" component={Pantry} />
-                <Route path="/search" component={Search} />
-              </Switch>
-            </Fragment>
-          )}
-        />
+          <Paper className={classes.root}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              centered
+            >
+              <Tab label="Home" component={Link} to="/" />
+              <Tab label="Categories" component={Link} to="/categories" />
+              <Tab label="Pantry" component={Link} to="/pantry" />
+              <Tab label="Search" component={Link} to="/search" />
+            </Tabs>
+          </Paper>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/categories" component={Categories} />
+            <Route path="/pantry" component={Pantry} />
+            <Route path="/search" component={Search} />
+          </Switch>
       </div>
     </Router>
   );
