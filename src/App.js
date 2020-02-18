@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { Fragment } from "react";
 import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
+import Home from "./components/Home";
 import Categories from "./components/Categories";
 import Pantry from "./components/Pantry";
 import Search from "./components/Search";
@@ -38,12 +39,14 @@ function App() {
                   textColor="primary"
                   centered
                 >
+                  <Tab label="Home" component={Link} to="/" />
                   <Tab label="Categories" component={Link} to="/categories" />
                   <Tab label="Pantry" component={Link} to="/pantry" />
                   <Tab label="Search" component={Link} to="/search" />
                 </Tabs>
               </Paper>
               <Switch>
+                <Route path="/" component={Home} />
                 <Route path="/categories" component={Categories} />
                 <Route path="/pantry" component={Pantry} />
                 <Route path="/search" component={Search} />

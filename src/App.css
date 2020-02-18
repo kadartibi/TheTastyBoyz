@@ -11,6 +11,14 @@
   background-image: url(./images/food-around.jpg);
 }
 
+.home {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
