@@ -10,6 +10,8 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { PantryProvider } from "./components/PantryContext";
+import { RecipeProvider } from "./components/context/RecipeContext";
+import Recipe from "./components/Recipe";
 
 const useStyles = makeStyles({
   root: {
@@ -29,26 +31,30 @@ function App() {
     <Router>
       <div className="App">
         <PantryProvider>
-          <Paper className={classes.root}>
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              centered
-            >
-              <Tab label="Home" component={Link} to="/" />
-              <Tab label="Categories" component={Link} to="/categories" />
-              <Tab label="Pantry" component={Link} to="/pantry" />
-              <Tab label="Search" component={Link} to="/search" />
-            </Tabs>
-          </Paper>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/categories" component={Categories} />
-            <Route path="/pantry" component={Pantry} />
-            <Route path="/search" component={Search} />
-          </Switch>
+          <RecipeProvider>
+            <Paper className={classes.root}>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                centered
+              >
+                <Tab label="Home" component={Link} to="/" />
+                <Tab label="Categories" component={Link} to="/categories" />
+                <Tab label="Pantry" component={Link} to="/pantry" />
+                <Tab label="Search" component={Link} to="/search" />
+                <Tab label="TestItem" component={Link} to="/testitem" />
+              </Tabs>
+            </Paper>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/categories" component={Categories} />
+              <Route path="/pantry" component={Pantry} />
+              <Route path="/search" component={Search} />
+              <Route exact path="/testitem" component={Recipe} />
+            </Switch>
+          </RecipeProvider>
         </PantryProvider>
       </div>
     </Router>
