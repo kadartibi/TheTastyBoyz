@@ -1,14 +1,21 @@
 .App {
   text-align: center;
+}
+
+body {
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   top: 0;
   left: 0;
   min-width: 100%;
   min-height: 100%;
   background-image: url(./images/food-around-small.jpg);
+  background-attachment: fixed;
 }
 
 .home {

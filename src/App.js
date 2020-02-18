@@ -9,6 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import { PantryProvider } from "./components/PantryContext";
 
 const useStyles = makeStyles({
   root: {
@@ -27,6 +28,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <PantryProvider>
           <Paper className={classes.root}>
             <Tabs
               value={value}
@@ -47,6 +49,7 @@ function App() {
             <Route path="/pantry" component={Pantry} />
             <Route path="/search" component={Search} />
           </Switch>
+        </PantryProvider>
       </div>
     </Router>
   );
