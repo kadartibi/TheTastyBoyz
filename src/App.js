@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import { PantryProvider } from "./components/PantryContext";
+import { PantryProvider } from "./components/context/PantryContext";
 import { RecipeProvider } from "./components/context/RecipeContext";
 import Recipe from "./components/Recipe";
 
@@ -38,7 +38,8 @@ function App() {
                 onChange={handleChange}
                 indicatorColor="primary"
                 textColor="primary"
-                centered
+                scrollButtons="auto"
+                variant="scrollable"
               >
                 <Tab label="Home" component={Link} to="/" />
                 <Tab label="Categories" component={Link} to="/categories" />

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { PantryContext } from "./PantryContext";
+import { PantryContext } from "./context/PantryContext";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 

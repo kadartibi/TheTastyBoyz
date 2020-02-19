@@ -1,9 +1,10 @@
 import React from 'react'
+import Typography from '@material-ui/core/Typography';
 
 export default function Home() {
     return (
-        <h1 className="home">
+        <Typography variant="h2" className="home">
            Welcome to The Tasty Boyz site!
-        </h1>
+        </Typography>
     )
 }
