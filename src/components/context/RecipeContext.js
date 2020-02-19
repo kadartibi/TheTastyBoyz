@@ -8,7 +8,7 @@ export const RecipeProvider = props => {
   if (!recipe) {
     axios
       .get(
-        "https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&apiKey=a571bf59d10f4bf7b057fec91bc9d741"
+        "https://api.spoonacular.com/recipes/716429/information?includeNutrition=true&apiKey=1eac39f1d4cb4425977ed9965b436d65"
       )
       .then(res => setRecipe(res.data));
   }
