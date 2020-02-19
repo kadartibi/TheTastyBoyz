@@ -56,12 +56,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import IngredientList from "./IngredientList";
 import DetailedViewTitle from "./DetailedViewTitle";
@@ -104,19 +102,7 @@ export default function RecipeReviewCard() {
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={<DetailedViewTitle />}
-      />
+      <CardHeader title={<DetailedViewTitle />} />
       <CardMedia
         className={classes.media}
         image={recipe ? String(recipe.image) : ""}
@@ -124,10 +110,13 @@ export default function RecipeReviewCard() {
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Ingredients:
+          <h2>Ingredients:</h2>
           <IngredientList />
         </Typography>
       </CardContent>
+      <CardActions disableSpacing>
+        <a href={recipe ? String(recipe.sourceUrl) : ""}>Original Recipe</a>
+      </CardActions>
       <CardActions disableSpacing>
         Nutritions:
         <IconButton
