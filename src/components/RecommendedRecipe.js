@@ -7,7 +7,7 @@ export default function RecommendedRecipe() {
   console.log(recommendedRecipes);
   return (
     <div>
-      <DisplayRecipes></DisplayRecipes>
+       <DisplayRecipes></DisplayRecipes>
     </div>
   );
 }
