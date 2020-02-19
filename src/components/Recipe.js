@@ -95,11 +95,11 @@ export default function RecipeReviewCard() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [recipe] = useContext(RecipeContext);
+  const [title] = "";
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <Card className={classes.root}>
       <CardHeader title={<DetailedViewTitle />} />
@@ -112,6 +112,15 @@ export default function RecipeReviewCard() {
         <Typography variant="body2" color="textSecondary" component="p">
           <h2>Ingredients:</h2>
           <IngredientList />
+          <h2>Need anything else? Here is the closest grocery store!!</h2>
+          <iframe
+            title={title}
+            width="600"
+            height="450"
+            frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?q=grocery%20store&key=AIzaSyCH6nTozCZ6cuWC5uGvlB61kDWKmYyllrY"
+            allowfullscreen
+          ></iframe>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
