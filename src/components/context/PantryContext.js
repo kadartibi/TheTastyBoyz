@@ -5,12 +5,7 @@ export const PantryContext = createContext();
 export function PantryProvider(props) {
   const [pantryItems, setPantryItems] = useState([
     "potato",
-    "tomato",
-    "spagetti",
-    "carrot",
-    "pork loins",
-    "salami",
-    "mozarella"
+    "tomato"
   ]);
   return (
     <PantryContext.Provider value={[pantryItems, setPantryItems]}>

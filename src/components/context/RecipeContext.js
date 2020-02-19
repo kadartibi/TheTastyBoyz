@@ -5,10 +5,11 @@ export const RecipeContext = createContext();
 
 export const RecipeProvider = props => {
   const [recipe, setRecipe] = useState();
+  const apiKey = "apiKey=bd83e659ea444e4c95cdea36564ee7f7"
   if (!recipe) {
     axios
       .get(
-        "https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&apiKey=a571bf59d10f4bf7b057fec91bc9d741"
+        "https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&" + apiKey
       )
       .then(res => setRecipe(res.data));
   }
