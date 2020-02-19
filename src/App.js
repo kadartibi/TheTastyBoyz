@@ -48,7 +48,11 @@ function App() {
                   <Tab label="Categories" component={Link} to="/categories" />
                   <Tab label="Pantry" component={Link} to="/pantry" />
                   <Tab label="Search" component={Link} to="/search" />
-                  <Tab label="Recommended Recipes" component={Link} to="/recommended-recipes" />
+                  <Tab
+                    label="Recommended Recipes"
+                    component={Link}
+                    to="/recommended-recipes"
+                  />
                   <Tab label="TestItem" component={Link} to="/testitem" />
                 </Tabs>
               </Paper>
@@ -57,7 +61,10 @@ function App() {
                 <Route path="/categories" component={Categories} />
                 <Route path="/pantry" component={Pantry} />
                 <Route path="/search" component={Search} />
-                <Route path="/recommended-recipes" component={RecommendedRecipe} />
+                <Route
+                  path="/recommended-recipes"
+                  component={RecommendedRecipe}
+                />
                 <Route exact path="/testitem" component={Recipe} />
               </Switch>
             </RecipeProvider>
