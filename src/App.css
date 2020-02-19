@@ -1,13 +1,23 @@
 .App {
   text-align: center;
+}
+
+body {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   top: 0;
   left: 0;
   min-width: 100%;
   min-height: 100%;
   background-image: url(./images/food-around-small.jpg);
   background-attachment: fixed;
+}
+
+.home {
+  position: absolute;
+  top: 35%;
+  left: 25%;
 }
 
 .App-logo {
@@ -44,3 +54,10 @@
     transform: rotate(360deg);
   }
 }
+
+@media (min-width: 768px) {
+  .MuiTabs-flexContainer {
+    justify-content: center;
+  }
+}
+

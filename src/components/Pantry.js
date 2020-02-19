@@ -1,39 +1,32 @@
-import React, { useContext } from "react";
-import { PantryContext } from "./PantryContext";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import React from "react";
 import AddToPantry from "./AddToPantry";
+import PantryList from "./PantryList";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+
+const useStyles = makeStyles({
+  root: {
+    width: 230,
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: 25,
+    display: "table"
+  }
+});
 
 export default function Pantry() {
-  const [pantryItems, setPantryItems] = useContext(PantryContext);
-
-  const useStyles = makeStyles(theme => ({
-    root: {
-      flexGrow: 1
-    },
-    paper: {
-      padding: theme.spacing(2),
-      marginTop: 200,
-      display: "inline-block",
-      textAlign: "center",
-      alignSelf: "center",
-      color: theme.palette.text.secondary
-    }
-  }));
-
   const classes = useStyles();
 
-  const pantryList = pantryItems.map(item => <p>{item}</p>);
-
   return (
-    <div className={classes.root}>
-      
-        <Paper className={classes.paper} elevation={3}>
-          {pantryList}
-        </Paper>
-
-        <AddToPantry></AddToPantry>
-      
-    </div>
+    <Card className={classes.root}>
+      <CardContent>
+        <PantryList />
+      </CardContent>
+      <CardActions>
+        <AddToPantry />
+      </CardActions>
+    </Card>
   );
 }
