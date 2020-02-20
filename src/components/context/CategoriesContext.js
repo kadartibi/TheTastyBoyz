@@ -5,7 +5,7 @@ export const CategoriesContext = createContext();
 
 export function CategoriesProvider(props) {
   const [recipesByCategories, setRecipesByCategories] = useState();
-  const apiKey = "47a2adbba5e44a6d938c6a2bf8db9e4c";
+  const apiKey = "3678e7ea03864b63934107f9bdb996ac";
   const [dietType, setDietType] = useState();
   const queryString =
     "https://api.spoonacular.com/recipes/search?diet=" +

@@ -6,7 +6,7 @@ export const SearchedRecipeContext = createContext();
 export function SearchedRecipeProvider(props) {
   const [searched, setSearchedRecipes] = useState();
   const [searchItem, setSearchItem] = useState();
-  const apiKey = "&apiKey=70bfdafc11684e60a8890fb24d9b227a";
+  const apiKey = "&apiKey=3678e7ea03864b63934107f9bdb996ac";
   const recipeSearchString =
     "https://api.spoonacular.com/recipes/search?query=";
 
