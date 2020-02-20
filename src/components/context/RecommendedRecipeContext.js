@@ -9,7 +9,7 @@ export function RecommendedRecipeProvider(props) {
   const [pantryItems] = useContext(PantryContext);
   const pantryItemsQueryString = pantryItems.join(",+");
   const resultLimit = "&number=6&apiKey=";
-  const apiKey = "70bfdafc11684e60a8890fb24d9b227a";
+  const apiKey = "47a2adbba5e44a6d938c6a2bf8db9e4c";
   const ingredientSearchString =
     "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
   const randomRecipe =
