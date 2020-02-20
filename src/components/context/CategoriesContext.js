@@ -12,11 +12,10 @@ export function CategoriesProvider(props) {
     dietType +
     "&number=6&apiKey=" +
     apiKey;
-
   useEffect(() => {
     axios.get(queryString).then(res => setRecipesByCategories(res.data));
   }, [dietType]);
-
+  
   return (
     <CategoriesContext.Provider
       value={[dietType, setDietType, recipesByCategories]}

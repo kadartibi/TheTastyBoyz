@@ -40,43 +40,43 @@ const useStyles = makeStyles(theme => ({
 
 export default function Categories(props) {
   const categoryDescriptions = {
-    0: [
+    0: ["gluten-free",
       "Gluten free",
       "Eliminating gluten means avoiding wheat, barley, rye, and other gluten-containing grains and foods made from them (or that may have been cross contaminated)."
     ],
-    1: [
+    1: ["keto",
       "Ketogenic",
       "The keto diet is based more on the ratio of fat, protein, and carbs in the diet rather than specific ingredients. Generally speaking, high fat, protein-rich foods are acceptable and high carbohydrate foods are not."
     ],
-    2: [
+    2: ["vegetarian",
       "Vegetarian",
       "No ingredients may contain meat or meat by-products, such as bones or gelatin."
     ],
-    3: [
+    3: ["lacto-vegetarian",
       "Lacto-vegetarian",
       "All ingredients must be vegetarian and none of the ingredients can be or contain egg."
     ],
-    4: [
+    4: ["ovo-vegetarian",
       "Ovo-vegetarian",
       "All ingredients must be vegetarian and none of the ingredients can be or contain dairy."
     ],
-    5: [
+    5: ["vegan",
       "Vegan",
       "No ingredients may contain meat or meat by-products, such as bones or gelatin, nor may they contain eggs, dairy, or honey."
     ],
-    6: [
+    6: ["pescetarian",
       "Pescetarian",
       "Everything is allowed except meat and meat by-products - some pescetarians eat eggs and dairy, some do not."
     ],
-    7: [
+    7: ["paleo",
       "Paleo",
       "Allowed ingredients include meat (especially grass fed), fish, eggs, vegetables, some oils (e.g. coconut and olive oil), and in smaller quantities, fruit, nuts, and sweet potatoes. We also allow honey and maple syrup (popular in Paleo desserts, but strict Paleo followers may disagree). Ingredients not allowed include legumes (e.g. beans and lentils), grains, dairy, refined sugar, and processed foods."
     ],
-    8: [
+    8: ["primal",
       "Primal",
       "Very similar to Paleo, except dairy is allowed - think raw and full fat milk, butter, ghee, etc."
     ],
-    9: [
+    9: ["whole30",
       "Whole30",
       "Allowed ingredients include meat, fish/seafood, eggs, vegetables, fresh fruit, coconut oil, olive oil, small amounts of dried fruit and nuts/seeds. Ingredients not allowed include added sweeteners (natural and artificial, except small amounts of fruit juice), dairy (except clarified butter or ghee), alcohol, grains, legumes (except green beans, sugar snap peas, and snow peas), and food additives, such as carrageenan, MSG, and sulfites."
     ]
@@ -84,15 +84,15 @@ export default function Categories(props) {
 
   const chosenCategory = categoryDescriptions[parseInt(props.match.params.id)];
 
-  const categoryName = chosenCategory[0];
+  const categoryName = chosenCategory[1];
 
-  const categoryDescription = chosenCategory[1];
+  const categoryDescription = chosenCategory[2];
 
   const [dietType, setDietType, recipesByCategories] = useContext(
     CategoriesContext
   );
 
-  setDietType(categoryName.toLowerCase());
+  setDietType(chosenCategory[0]);
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);

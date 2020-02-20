@@ -26,8 +26,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const fixImageUrl = imageSrc => {
-  const imageUrl = "https://spoonacular.com/recipeImages/";
-  return imageSrc.includes(imageUrl) ? imageSrc : imageUrl + imageSrc;
+  if (imageSrc !== undefined) {
+    const imageUrl = "https://spoonacular.com/recipeImages/";
+    return imageSrc.includes(imageUrl) ? imageSrc : imageUrl + imageSrc;
+  }
+  return "Image not available";
 };
 
 export function DisplayRecipes(props) {
@@ -53,7 +56,7 @@ export function DisplayRecipes(props) {
                 setRecipeId(recipe.id);
               }}
             >
-              <img src={fixImageUrl(recipe.image)}/>
+              <img src={fixImageUrl(recipe.image)} alt="Image not available" />
             </Link>
             <GridListTileBar title={recipe.title} />
           </GridListTile>
