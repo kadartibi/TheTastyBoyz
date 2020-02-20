@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 50,
-    width: 600,
+    width: "auto",
+    maxWidth: 600,
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
@@ -31,7 +32,7 @@ export function DisplayRecipes(props) {
 
   return recipes ? (
     <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+      <GridList cellHeight={180} className={classes.gridList} eleva>
         <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
           <ListSubheader component="h1">Found recipes:</ListSubheader>
         </GridListTile>
