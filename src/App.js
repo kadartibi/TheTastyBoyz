@@ -53,7 +53,6 @@ function App() {
                     component={Link}
                     to="/recommended-recipes"
                   />
-                  <Tab label="TestItem" component={Link} to="/testitem" />
                 </Tabs>
               </Paper>
               <Switch>
@@ -65,7 +64,7 @@ function App() {
                   path="/recommended-recipes"
                   component={RecommendedRecipe}
                 />
-                <Route exact path="/testitem" component={Recipe} />
+                <Route path="/recipe" component={Recipe} />
               </Switch>
             </RecipeProvider>
           </RecommendedRecipeProvider>
