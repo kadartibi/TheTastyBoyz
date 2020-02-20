@@ -1,52 +1,3 @@
-/*
-import React from "react";
-import IngredientList from "./IngredientList";
-import DetailedViewPicture from "./DetailedViewPicture";
-import DetailedViewTitle from "./DetailedViewTitle";
-import Paper from "@material-ui/core/Paper";
-
-const Recipe = props => {
-  const paperStyle = {
-    padding: 20,
-    width: "50%",
-    align: "left",
-    fontSize: 20
-  };
-  const titleStyle = {
-    margin: "auto",
-    width: "60%",
-    marginTop: "7%"
-  };
-  const pictureStyle = {
-    width: "50%",
-    margin: "auto",
-    padding: 20
-  };
-  const containerStyle = {
-    display: "flex",
-    marginLeft: "20%",
-    marginRight: "20%"
-  };
-  return (
-    <div>
-      <Paper elevation={3} style={titleStyle}>
-        <DetailedViewTitle />
-      </Paper>
-      <div style={containerStyle}>
-        <Paper elevation={3} style={pictureStyle}>
-          <DetailedViewPicture />
-        </Paper>
-        <Paper elevation={3} style={paperStyle}>
-          <h2>Ingredients:</h2>
-          <IngredientList />
-        </Paper>
-      </div>
-    </div>
-  );
-};
-export default Recipe;
-*/
-
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -95,7 +46,6 @@ export default function RecipeReviewCard() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [recipe] = useContext(RecipeContext);
-  const [title] = "";
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -112,15 +62,6 @@ export default function RecipeReviewCard() {
         <Typography variant="body2" color="textSecondary" component="p">
           <h2>Ingredients:</h2>
           <IngredientList />
-          <h2>Need anything else? Here is the closest grocery store!!</h2>
-          <iframe
-            title={title}
-            width="600"
-            height="450"
-            frameborder="0"
-            src="https://www.google.com/maps/embed/v1/place?q=grocery%20store&key=AIzaSyCH6nTozCZ6cuWC5uGvlB61kDWKmYyllrY"
-            allowfullscreen
-          ></iframe>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -147,3 +88,13 @@ export default function RecipeReviewCard() {
     </Card>
   );
 }
+
+/*<h2>Need anything? Here is the closest grocery store!!</h2>
+          <iframe
+            title={title}
+            width="600"
+            height="450"
+            frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?q=grocery%20store&key=AIzaSyCH6nTozCZ6cuWC5uGvlB61kDWKmYyllrY"
+            allowfullscreen
+          ></iframe> */
