@@ -11,6 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Button from "@material-ui/core/Button";
 
 import IngredientList from "./IngredientList";
 import DetailedViewTitle from "./DetailedViewTitle";
@@ -64,9 +65,14 @@ export default function RecipeReviewCard() {
           <IngredientList />
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <a href={recipe ? String(recipe.sourceUrl) : ""}>Original Recipe</a>
-      </CardActions>
+      <Button
+        className="originalLinkButton"
+        variant="outlined"
+        color="primary"
+        href={recipe ? String(recipe.sourceUrl) : ""}
+      >
+        Original Recipe
+      </Button>
       <CardActions disableSpacing>
         Nutritions:
         <IconButton

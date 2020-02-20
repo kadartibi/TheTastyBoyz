@@ -14,6 +14,7 @@ import { RecipeProvider } from "./components/context/RecipeContext";
 import { RecommendedRecipeProvider } from "./components/context/RecommendedRecipeContext";
 import Recipe from "./components/Recipe";
 import RecommendedRecipe from "./components/RecommendedRecipe";
+import { SearchedRecipeProvider } from "./components/context/SearchContext";
 
 const useStyles = makeStyles({
   root: {
@@ -33,41 +34,43 @@ function App() {
     <Router>
       <div className="App">
         <PantryProvider>
-          <RecommendedRecipeProvider>
-            <RecipeProvider>
-              <Paper className={classes.root}>
-                <Tabs
-                  value={value}
-                  onChange={handleChange}
-                  indicatorColor="primary"
-                  textColor="primary"
-                  scrollButtons="auto"
-                  variant="scrollable"
-                >
-                  <Tab label="Home" component={Link} to="/" />
-                  <Tab label="Categories" component={Link} to="/categories" />
-                  <Tab label="Pantry" component={Link} to="/pantry" />
-                  <Tab label="Search" component={Link} to="/search" />
-                  <Tab
-                    label="Recommended Recipes"
-                    component={Link}
-                    to="/recommended-recipes"
+          <SearchedRecipeProvider>
+            <RecommendedRecipeProvider>
+              <RecipeProvider>
+                <Paper className={classes.root}>
+                  <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    scrollButtons="auto"
+                    variant="scrollable"
+                  >
+                    <Tab label="Home" component={Link} to="/" />
+                    <Tab label="Categories" component={Link} to="/categories" />
+                    <Tab label="Pantry" component={Link} to="/pantry" />
+                    <Tab label="Search" component={Link} to="/search" />
+                    <Tab
+                      label="Recommended Recipes"
+                      component={Link}
+                      to="/recommended-recipes"
+                    />
+                  </Tabs>
+                </Paper>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/categories" component={Categories} />
+                  <Route path="/pantry" component={Pantry} />
+                  <Route path="/search" component={Search} />
+                  <Route
+                    path="/recommended-recipes"
+                    component={RecommendedRecipe}
                   />
-                </Tabs>
-              </Paper>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/categories" component={Categories} />
-                <Route path="/pantry" component={Pantry} />
-                <Route path="/search" component={Search} />
-                <Route
-                  path="/recommended-recipes"
-                  component={RecommendedRecipe}
-                />
-                <Route path="/recipe" component={Recipe} />
-              </Switch>
-            </RecipeProvider>
-          </RecommendedRecipeProvider>
+                  <Route path="/recipe" component={Recipe} />
+                </Switch>
+              </RecipeProvider>
+            </RecommendedRecipeProvider>
+          </SearchedRecipeProvider>
         </PantryProvider>
       </div>
     </Router>

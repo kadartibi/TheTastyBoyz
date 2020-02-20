@@ -6,10 +6,10 @@ export const RecommendedRecipeContext = createContext();
 
 export function RecommendedRecipeProvider(props) {
   const [recommendedRecipes, setRecommendedRecipes] = useState([]);
-  const [pantryItems, setPantryItems] = useContext(PantryContext);
+  const [pantryItems] = useContext(PantryContext);
   const pantryItemsQueryString = pantryItems.join(",+");
   const resultLimit = "&number=6&apiKey=";
-  const apiKey = "e20454bd00d7432ba51928d2e0ff6754";
+  const apiKey = "70bfdafc11684e60a8890fb24d9b227a";
   const ingredientSearchString =
     "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
   const randomRecipe =

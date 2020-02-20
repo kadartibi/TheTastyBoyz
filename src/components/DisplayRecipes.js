@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 
 export function DisplayRecipes(props) {
   const classes = useStyles();
-  const recipes = props.recipes
+  const recipes = props.recipes;
   const [food, recipeId, setRecipeId] = useContext(RecipeContext);
 
   return recipes ? (
@@ -36,7 +36,7 @@ export function DisplayRecipes(props) {
           <ListSubheader component="h1">Found recipes:</ListSubheader>
         </GridListTile>
         {recipes.map(recipe => (
-          <GridListTile key={recipe.title}>
+          <GridListTile key={recipe.id}>
             <Link
               to="/recipe"
               onClick={() => {

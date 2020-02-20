@@ -13,7 +13,9 @@ body {
   background-image: url(./images/food-around-small.jpg);
   background-attachment: fixed;
 }
-
+.originalLinkButton {
+  align-self: right;
+}
 .home {
   position: fixed;
   left: 50%;
