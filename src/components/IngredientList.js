@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { RecipeContext } from "./context/RecipeContext";
 import Ingredient from "./Ingredient";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const IngredientList = props => {
   const [recipe] = useContext(RecipeContext);
@@ -12,7 +13,7 @@ const IngredientList = props => {
       />
     ))
   ) : (
-    <div>Loading...</div>
+    <CircularProgress/>
   );
 };
 export default IngredientList;

@@ -4,8 +4,10 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { RecipeContext } from "./context/RecipeContext";
 import { Link } from "react-router-dom";
+import placeholder  from "../images/placeholder.png"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,7 +32,7 @@ const fixImageUrl = imageSrc => {
     const imageUrl = "https://spoonacular.com/recipeImages/";
     return imageSrc.includes(imageUrl) ? imageSrc : imageUrl + imageSrc;
   }
-  return "Image not available";
+  return placeholder;
 };
 
 export function DisplayRecipes(props) {
@@ -64,6 +66,6 @@ export function DisplayRecipes(props) {
       </GridList>
     </div>
   ) : (
-    <div>Loading....</div>
+    <CircularProgress />
   );
 }

@@ -17,6 +17,7 @@ import IngredientList from "./IngredientList";
 import DetailedViewTitle from "./DetailedViewTitle";
 import { RecipeContext } from "./context/RecipeContext";
 import NutritionList from "./NutritionList";
+import placeholder from "../images/placeholder.png"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -57,7 +58,7 @@ export default function RecipeReviewCard() {
       <CardHeader title={<DetailedViewTitle />} />
       <CardMedia
         className={classes.media}
-        image={recipe ? String(recipe.image) : ""}
+        image={recipe ? String(recipe.image) : placeholder}
         title={<DetailedViewTitle />}
       />
       <CardContent>
