@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: 110,
+    marginTop: 50,
     width: 600,
     display: "flex",
     flexWrap: "wrap",
@@ -24,18 +24,27 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const fixImageUrl = imageSrc => {
+  const imageUrl = "https://spoonacular.com/recipeImages/";
+  return imageSrc.includes(imageUrl) ? imageSrc : imageUrl + imageSrc;
+};
+
 export function DisplayRecipes(props) {
   const classes = useStyles();
-  const recipes = props.recipes
+  let recipesDataReceived = props.recipes;
   const [food, recipeId, setRecipeId] = useContext(RecipeContext);
 
-  return recipes ? (
+  recipesDataReceived = Array.isArray(recipesDataReceived)
+    ? recipesDataReceived
+    : recipesDataReceived.recipes;
+
+  return recipesDataReceived ? (
     <div className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
           <ListSubheader component="h1">Found recipes:</ListSubheader>
         </GridListTile>
-        {recipes.map(recipe => (
+        {recipesDataReceived.map(recipe => (
           <GridListTile key={recipe.title}>
             <Link
               to="/recipe"
@@ -43,7 +52,7 @@ export function DisplayRecipes(props) {
                 setRecipeId(recipe.id);
               }}
             >
-              <img src={recipe.image} alt={recipe.image} />
+              <img src={fixImageUrl(recipe.image)}/>
             </Link>
             <GridListTileBar title={recipe.title} />
           </GridListTile>

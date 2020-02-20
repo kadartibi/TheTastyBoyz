@@ -4,7 +4,6 @@ import Ingredient from "./Ingredient";
 
 const IngredientList = props => {
   const [recipe] = useContext(RecipeContext);
-  console.log(recipe);
   return recipe ? (
     recipe.extendedIngredients.map(ingredient => (
       <Ingredient

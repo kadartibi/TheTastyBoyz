@@ -43,6 +43,19 @@ function App() {
     setAnchorEl(null);
   };
 
+  const categories = [
+    "Gluten-free",
+    "Ketogenic",
+    "Vegetarian",
+    "Lacto-Vegetarian",
+    "Ovo-Vegetarian",
+    "Vegan",
+    "Pescatarian",
+    "Paleo",
+    "Primal",
+    "Whole30"
+  ];
+
   return (
     <Router>
       <div className="App">
@@ -75,18 +88,16 @@ function App() {
                       open={Boolean(anchorEl)}
                       onClose={handleClose}
                     >
-                      <MenuItem onClick={handleClose} component={Link} to="/search">Gluten free</MenuItem>
-                      <MenuItem>Ketogenic</MenuItem>
-                      <MenuItem>Vegetarian</MenuItem>
-                      <MenuItem>Lacto-Vegetarian</MenuItem>
-                      <MenuItem>Ovo-Vegetarian</MenuItem>
-                      <MenuItem>Vegan</MenuItem>
-                      <MenuItem>Pescatarian</MenuItem>
-                      <MenuItem>Paleo</MenuItem>
-                      <MenuItem>Primal</MenuItem>
-                      <MenuItem>Whole30</MenuItem>
+                      {categories.map(category => (
+                        <MenuItem
+                          onClick={handleClose}
+                          component={Link}
+                          to={"/categories/" + categories.indexOf(category)}
+                        >
+                          {category}
+                        </MenuItem>
+                      ))}
                     </Menu>
-
                     <Tab label="Pantry" component={Link} to="/pantry" />
                     <Tab label="Search" component={Link} to="/search" />
                     <Tab
@@ -98,7 +109,7 @@ function App() {
                 </Paper>
                 <Switch>
                   <Route exact path="/" component={Home} />
-                  <Route path="/categories" component={Categories} />
+                  <Route path="/categories/:id" component={Categories} />
                   <Route path="/pantry" component={Pantry} />
                   <Route path="/search" component={Search} />
                   <Route

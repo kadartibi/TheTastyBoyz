@@ -6,7 +6,7 @@ export const RecipeContext = createContext();
 export const RecipeProvider = props => {
   const [recipe, setRecipe] = useState();
   const [recipeId, setRecipeId] = useState("716429");
-  const apiKey = "ede037e5481b45e6aa041dd91def64ab";
+  const apiKey = "cff302811d164d978d3f7b58489da7fb";
   useEffect(() => {
     axios
       .get(

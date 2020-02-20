@@ -4,13 +4,10 @@ import { DisplayRecipes } from "./DisplayRecipes";
 
 export default function RecommendedRecipe() {
   let [recommendedRecipes] = useContext(RecommendedRecipeContext);
-  recommendedRecipes = Array.isArray(recommendedRecipes)
-    ? recommendedRecipes
-    : recommendedRecipes.recipes;
 
   return (
     <div>
-      <DisplayRecipes recipes={recommendedRecipes}></DisplayRecipes>
+      <DisplayRecipes recipes={recommendedRecipes}/>
     </div>
   );
 }
