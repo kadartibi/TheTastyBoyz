@@ -13,8 +13,14 @@ body {
   background-image: url(./images/food-around-small.jpg);
   background-attachment: fixed;
 }
-.originalLinkButton {
-  align-self: right;
+.searchbar {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: fit-content;
+  align-self: center;
+  align-content: right;
 }
 .home {
   position: fixed;

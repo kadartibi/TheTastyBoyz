@@ -22,7 +22,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: "60%",
     alignSelf: "center",
-    marginLeft: "20%"
+    marginLeft: "20%",
+    marginTop: "50px"
   },
   media: {
     height: 0,
@@ -52,7 +53,7 @@ export default function RecipeReviewCard() {
     setExpanded(!expanded);
   };
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} elevation={3}>
       <CardHeader title={<DetailedViewTitle />} />
       <CardMedia
         className={classes.media}

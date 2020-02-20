@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     width: 230,
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: 25,
+    marginTop: 50,
     display: "table"
   }
 });

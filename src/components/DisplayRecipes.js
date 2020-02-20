@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: 110,
+    marginTop: 50,
     width: 600,
     display: "flex",
     flexWrap: "wrap",
