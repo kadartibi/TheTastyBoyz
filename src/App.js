@@ -57,7 +57,7 @@ function App() {
                 <Route path="/pantry" component={Pantry} />
                 <Route path="/search" component={Search} />
                 <Route path="/recommended-recipes" component={RecommendedRecipe} />
-                <Route exact path="/recipe" component={Recipe} />
+                <Route path="/recipe" component={Recipe} />
               </Switch>
             </RecipeProvider>
           </RecommendedRecipeProvider>

@@ -43,7 +43,7 @@ export function DisplayRecipes(props) {
         {recommendedRecipes.map(recipe => (
           <GridListTile key={recipe.title}>
             <Link
-              to="/testitem"
+              to="/recipe"
               onClick={() => {
                 setRecipeId(recipe.id);
               }}

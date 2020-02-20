@@ -8,12 +8,12 @@ export function RecommendedRecipeProvider(props) {
   const [recommendedRecipes, setRecommendedRecipes] = useState([]);
   const [pantryItems, setPantryItems] = useContext(PantryContext);
   const pantryItemsQueryString = pantryItems.join(",+");
-  const resultLimit = "&number=5&apiKey=";
+  const resultLimit = "&number=6&apiKey=";
   const apiKey = "e20454bd00d7432ba51928d2e0ff6754";
   const ingredientSearchString =
     "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
   const randomRecipe =
-    "https://api.spoonacular.com/recipes/random?number=5&apiKey=";
+    "https://api.spoonacular.com/recipes/random?number=6&apiKey=";
 
   const recommendedSearchString =
     pantryItems.length > 0
