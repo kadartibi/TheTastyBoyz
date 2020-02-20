@@ -4,7 +4,6 @@ import { DisplayRecipes } from "./DisplayRecipes";
 
 export default function RecommendedRecipe() {
   const [recommendedRecipes] = useContext(RecommendedRecipeContext);
-  console.log(recommendedRecipes);
   return (
     <div>
        <DisplayRecipes></DisplayRecipes>

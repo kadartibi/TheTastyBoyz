@@ -27,8 +27,12 @@ const useStyles = makeStyles(theme => ({
 
 export function DisplayRecipes(props) {
   const classes = useStyles();
-  const [recommendedRecipes] = useContext(RecommendedRecipeContext);
+  let [recommendedRecipes] = useContext(RecommendedRecipeContext);
   const [food, recipeId, setRecipeId] = useContext(RecipeContext);
+
+  recommendedRecipes = Array.isArray(recommendedRecipes)
+    ? recommendedRecipes
+    : recommendedRecipes.recipes;
 
   return recommendedRecipes ? (
     <div className={classes.root}>
