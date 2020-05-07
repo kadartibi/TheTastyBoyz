@@ -9,6 +9,7 @@ The app uses Spoonacular food-api.
 ## Technologies used
 - React
 - JavaScript
+- Material-UI
 
 ## Webpage link
 https://thetastyboyz.netlify.app/
